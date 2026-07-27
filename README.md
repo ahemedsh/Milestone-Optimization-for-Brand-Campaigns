@@ -1,20 +1,33 @@
 # Milestone Optimization for Brand Campaigns
 
-A data-driven approach for recommending milestone targets and payouts for influencer marketing campaigns using historical campaign performance.
+A data-driven project that recommends milestone targets and payout distributions for influencer marketing campaigns using historical campaign performance.
 
-## Overview
+---
 
-This project recommends milestone ladders for new influencer campaigns based on historical data. The recommendation considers campaign category, creator tier, and campaign budget to generate realistic milestone thresholds while keeping payouts within the allocated budget.
+## Project Overview
 
-The project also includes backtesting to compare the recommended milestone ladders with historical configurations.
+Planning milestone ladders manually can be time-consuming and may lead to inconsistent targets across similar campaigns. This project provides a simple, data-driven approach to recommending milestone thresholds based on historical campaign data.
+
+The recommendation considers:
+
+- Campaign category
+- Creator tier
+- Campaign budget
+
+The project also validates the recommendations through backtesting against historical campaign configurations.
+
+---
 
 ## Features
 
 - Recommends milestone view thresholds for new campaigns.
-- Generates budget-aware payout recommendations.
-- Handles campaigns with limited historical data using fallback logic.
-- Validates recommendations through backtesting.
+- Generates budget-aware payout distributions.
+- Uses historical campaign performance to guide recommendations.
+- Handles campaigns with limited historical data using a fallback strategy.
+- Includes backtesting to evaluate recommendation quality.
 - Interactive notebook for testing different campaign scenarios.
+
+---
 
 ## Project Structure
 
@@ -25,40 +38,46 @@ The project also includes backtesting to compare the recommended milestone ladde
 │   ├── creators.csv
 │   ├── posts.csv
 │   └── historical_ladders.csv
+│
 ├── Milestone_Optimization.ipynb
-├── report.pdf
-└── README.md
+├── Report.pdf
+├── README.md
+└── requirements.txt (optional)
 ```
+
+---
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.10 or later
 - Jupyter Notebook or Google Colab
 
-### Python Libraries
-
-Install the required packages using:
+Install the required libraries:
 
 ```bash
 pip install pandas numpy matplotlib seaborn
 ```
 
-## Running the Project
+---
 
-1. Clone the repository.
+## Setup & Run
+
+### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/<your-username>/<repository-name>.git
+cd <repository-name>
 ```
 
-2. Install the required libraries.
+### 2. Install the required libraries
 
 ```bash
 pip install pandas numpy matplotlib seaborn
 ```
 
-3. Open the notebook.
+### 3. Open the notebook
+
+Using Jupyter Notebook:
 
 ```bash
 jupyter notebook
@@ -66,37 +85,70 @@ jupyter notebook
 
 or upload the notebook to **Google Colab**.
 
-4. Place the datasets inside the `data/` folder.
+### 4. Add the datasets
 
-5. Run the notebook from top to bottom.
+Place the following files inside the `data/` folder:
 
-6. At the end of the notebook, enter:
+- campaigns.csv
+- creators.csv
+- posts.csv
+- historical_ladders.csv
 
-- Campaign Category
-- Creator Tier
-- Campaign Budget
+### 5. Run the notebook
 
-The notebook will generate the recommended milestone thresholds and payout amounts.
+Execute all cells from top to bottom.
+
+---
 
 ## Methodology
 
-The recommendation process:
+The recommendation process follows these steps:
 
-- Combines historical campaign, creator, post, and milestone data.
-- Groups similar campaigns using campaign category and creator tier.
-- Uses historical view distributions to recommend milestone thresholds.
-- Allocates the campaign budget across five milestones.
-- Validates the recommendations using historical campaign data.
+1. Load and combine campaign, creator, post, and historical milestone datasets.
+2. Group historical campaigns by campaign category and creator tier.
+3. Estimate expected campaign performance using historical final view distributions.
+4. Generate milestone thresholds using historical percentiles.
+5. Allocate the campaign budget across five milestone levels.
+6. Validate the recommendations using historical campaign data.
 
-## Results
+---
 
-The notebook includes:
+## Try It Yourself
 
-- Sample milestone recommendations
-- Backtesting against historical milestone ladders
-- Budget validation
-- Summary evaluation metrics
+The notebook includes an interactive section that allows you to test the recommendation system using your own campaign inputs.
+
+Simply enter:
+
+- **Campaign Category**
+- **Creator Tier**
+- **Campaign Budget**
+
+The notebook will automatically generate:
+
+- Recommended milestone view thresholds
+- Payout amount for each milestone
+- Complete milestone ladder
+- Total payout validation
+
+This makes it easy to explore different campaign scenarios and understand how the recommendation strategy adapts to different inputs.
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Google Colab / Jupyter Notebook
+
+---
 
 ## Author
 
 **Ahemed Sakeer Hussain**
+
+B.Tech Computer Science (Data Science)
+
+GitHub: https://github.com/ahemedsh
