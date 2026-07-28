@@ -62,8 +62,8 @@ pip install pandas numpy matplotlib seaborn
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ahemedsh/memed-milestone-optimizer.git
-cd memed-milestone-optimizer
+git clone https://github.com/ahemedsh/Milestone-Optimization-for-Brand-Campaigns.git
+cd Milestone-Optimization-for-Brand-Campaigns
 ```
 
 ### 2. Install the required libraries
